@@ -6,6 +6,7 @@ import {logo } from '../public/assets/images/index'
 import { IoSearchOutline } from 'react-icons/io5'
 import { AiOutlineHeart, AiOutlineUser } from 'react-icons/ai'
 import { BsCart2 } from 'react-icons/bs'
+import Link from 'next/link'
 
 
 const Navbar = () => {
@@ -15,9 +16,11 @@ const Navbar = () => {
             <div className='max-w-container mx-auto h-20 px-4 flex items-center justify-between  gap-2'>
                 {/* ----------------------------------------------------- */}
                 {/* ============== Logo Start Here ==================== */}
-                <div className='navBarHover'>
-                    <Image src= {logo} className='w-44' alt="logo"/>
-                </div>
+                <Link href={'/'}>
+                    <div className='navBarHover'>
+                        <Image src= {logo} className='w-44' alt="logo"/>
+                    </div>
+                </Link>
                 {/* ============== Logo End Here ==================== */}
                 {/* ============== Departments Start Here ==================== */}
                 <div className='navBarHover'>
@@ -73,15 +76,17 @@ const Navbar = () => {
                 </div>
                 {/* ============== Acountes End Here ==================== */}
                 {/* ============== Cart Start Here ==================== */}
-                <div className='flex flex-col justify-center items-center gap-2 h-12 px-5
-                rounded-full bg-transparent hover:bg-hoverBg duration-300 relative'>
-                    <BsCart2 className='text-2xl'/>
-                    <p className='text-[10px] -mt-2'>$0.00</p>
-                    <span className='absolute w-4 h-4 bg-yellow text-black top-0 right-4
-                    rounded-full flex items-center justify-center font-bodyFont text-xs'>
-                        0
-                    </span>
-                </div>
+                <Link href="/cart">
+                    <div className='flex flex-col justify-center items-center gap-2 h-12 px-5
+                    rounded-full bg-transparent hover:bg-hoverBg duration-300 relative'>
+                        <BsCart2 className='text-2xl'/>
+                        <p className='text-[10px] -mt-2'>$0.00</p>
+                        <span className='absolute w-4 h-4 bg-yellow text-black top-0 right-4
+                        rounded-full flex items-center justify-center font-bodyFont text-xs'>
+                            0
+                        </span>
+                    </div>
+                </Link>
                 {/* ============== Cart End Here ==================== */}
                 {/* ----------------------------------------------------- */}
                 {/* ============== NavbarBottom Start Here ==================== */}
